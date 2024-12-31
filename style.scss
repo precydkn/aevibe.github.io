@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'PCap Terminal';
+    src: url('Frontend/assets/fonts/PCap Terminal.otf') format("opentype");
+}
+@font-face {
+    font-family: 'Pattanakarn Regular';
+    src: url('Frontend/assets/fonts/Pattanakarn Regular.ttf');
+}
+
+body {
+    margin: 0;
+    font-family: 'Pattanakarn Regular';
+}
+
+header {
+    height: 100vh; /*header height is the same as video*/
+    video {
+        /*opacity: 0.5;*/
+        position: absolute; /*put the nav on top of vid*/
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /*occupy the whole div*/
+    }
+}
+nav {
+    padding-top: 20px;
+    font-family: 'PCap Terminal';
+    display: flex;
+    align-items: center;
+    a {
+        text-decoration: none;
+        mix-blend-mode: difference; /*color adjusts to video color*/
+    }
+    .store-logo {
+        margin-left: 30px;
+        /*border: 1px dashed black; /*remove after*/
+        img {
+            height: 50px;
+        }
+    }
+    .nav-btns {
+        margin-left: auto;
+        display: flex;
+        /*border: 1px dashed black; /*remove after*/
+        a {
+            margin: 0 50px 0;
+        }
+        .shop-by-container {
+            position: relative;
+        }
+        .shop-by-dropdown,
+        .shop-by-dropdown-era,
+        .shop-by-dropdown-member {
+            display: none; /*links are initially hidden*/
+            position: absolute; /*other link positions won't be affected*/
+            left: 50%; // Align the dropdown horizontally relative to the container
+            transform: translateX(-50%); // Center the dropdown under the "shop by" link
+            padding: 40px 0;
+            backdrop-filter: blur(10px);
+            border: 2px solid #646464;
+            border-radius: 0 0 10px 10px;
+            a {
+                display: block; /*links are displayed vertically*/
+                text-align: center;
+                transition: 0.3s; /*hover animations will not be abrupt*/
+            }
+        }
+        /*display 'ERA' & 'MEMBER' on hover*/
+        .shop-by-container:hover .shop-by-dropdown {
+            display: block;
+            width: 700px;
+        }
+    }
+}
+
+
+section {
+    padding: 0 80px 0;
+    font-size: 30px;
+    line-height: 1.5;
+    .shop-desc {
+        width: 1050px;
+    }
+}
+
+/*==========SCROLLBAR==========*/
+::-webkit-scrollbar{
+    width: 0;
+}
+/*::-webkit-scrollbar-track{
+    background-color: #7E1111;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#DDAC4A, #F5D278, #DDAC4A);
+    border-radius: 10px;
+}*/
