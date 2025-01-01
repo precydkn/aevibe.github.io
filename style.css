@@ -31,6 +31,7 @@ nav {
 }
 nav a {
   text-decoration: none;
+  color: white;
   mix-blend-mode: difference; /*color adjusts to video color*/
 }
 nav .store-logo {
@@ -44,13 +45,26 @@ nav .nav-btns {
   margin-left: auto;
   display: flex;
   /*border: 1px dashed black; /*remove after*/
-  /*display 'ERA' & 'MEMBER' on hover*/
+  /*2x2 grid for member emblems display*/
+  /*display 'ERA MEMBER' dropdown*/
 }
 nav .nav-btns a {
   margin: 0 50px 0;
 }
 nav .nav-btns .shop-by-container {
   position: relative;
+}
+nav .nav-btns .shop-by-container .shop-by-dropdown {
+  flex-direction: column;
+  justify-content: center;
+}
+nav .nav-btns .shop-by-container .shop-by-dropdown button {
+  background-color: transparent;
+  border: 0;
+}
+nav .nav-btns .shop-by-container .shop-by-dropdown button img {
+  height: 200px;
+  width: auto;
 }
 nav .nav-btns .shop-by-dropdown,
 nav .nav-btns .shop-by-dropdown-era,
@@ -59,22 +73,27 @@ nav .nav-btns .shop-by-dropdown-member {
   position: absolute; /*other link positions won't be affected*/
   left: 50%;
   transform: translateX(-50%);
-  padding: 40px 0;
+  background-color: rgba(100, 100, 100, 0.15);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   border: 2px solid #646464;
   border-radius: 0 0 10px 10px;
-}
-nav .nav-btns .shop-by-dropdown a,
-nav .nav-btns .shop-by-dropdown-era a,
-nav .nav-btns .shop-by-dropdown-member a {
-  display: block; /*links are displayed vertically*/
+  height: 90vh;
+  width: 700px;
+  overflow-y: scroll;
   text-align: center;
-  transition: 0.3s; /*hover animations will not be abrupt*/
+}
+nav .nav-btns .shop-by-dropdown-member {
+  grid-template-columns: auto auto;
+  align-items: center;
+  /*border: 1px dashed black; /*remove after*/
+}
+nav .nav-btns .shop-by-dropdown-member img {
+  width: 100%;
+  /*border: 1px dashed white; /*remove after*/
 }
 nav .nav-btns .shop-by-container:hover .shop-by-dropdown {
-  display: block;
-  width: 700px;
+  display: flex;
 }
 
 section {
