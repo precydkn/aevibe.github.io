@@ -29,6 +29,7 @@ nav {
     align-items: center;
     a {
         text-decoration: none;
+        color: white;
         mix-blend-mode: difference; /*color adjusts to video color*/
     }
     .store-logo {
@@ -47,6 +48,18 @@ nav {
         }
         .shop-by-container {
             position: relative;
+            .shop-by-dropdown {
+                flex-direction: column;
+                justify-content: center;
+                button {
+                    background-color: transparent;
+                    border: 0;
+                    img {
+                        height: 200px;
+                        width: auto;
+                    }
+                }
+            }
         }
         .shop-by-dropdown,
         .shop-by-dropdown-era,
@@ -55,24 +68,31 @@ nav {
             position: absolute; /*other link positions won't be affected*/
             left: 50%; // Align the dropdown horizontally relative to the container
             transform: translateX(-50%); // Center the dropdown under the "shop by" link
-            padding: 40px 0;
+            background-color: rgba(100, 100, 100, 15%);
             backdrop-filter: blur(10px);
             border: 2px solid #646464;
             border-radius: 0 0 10px 10px;
-            a {
-                display: block; /*links are displayed vertically*/
-                text-align: center;
-                transition: 0.3s; /*hover animations will not be abrupt*/
+            height: 90vh;
+            width: 700px;
+            overflow-y: scroll;
+            text-align: center;
+        }
+        /*2x2 grid for member emblems display*/
+        .shop-by-dropdown-member {
+            grid-template-columns: auto auto;
+            align-items: center;
+            /*border: 1px dashed black; /*remove after*/
+            img {
+                width: 100%;
+                /*border: 1px dashed white; /*remove after*/
             }
         }
-        /*display 'ERA' & 'MEMBER' on hover*/
-        .shop-by-container:hover .shop-by-dropdown {
-            display: block;
-            width: 700px;
+        /*display 'ERA MEMBER' dropdown*/
+        .shop-by-container:hover .shop-by-dropdown {            
+            display: flex;
         }
     }
 }
-
 
 section {
     padding: 0 80px 0;
